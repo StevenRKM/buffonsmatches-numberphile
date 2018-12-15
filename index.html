@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <script src="p5.min.js"></script>
+  <script src="sketch.js"></script>
+  <style>
+  h5 {
+    margin: 0;
+  }
+
+  p  {
+    max-width: 100%;
+    width: 800px;
+  }
+
+  canvas {
+    width: 100% !important;
+  }
+
+  input[type=range] {
+    width: 20%;
+  }
+  </style>
+</head>
+<body>
+    <h1>Buffon's Matches: approximating PI with simulated matches</h1>
+    <p>
+      We can approximate PI by throwing some matches on the floor.
+      This simulation throws thousands of matches on your screen.
+      In the background there are some vertical lines equally spaced from each other.
+      Whenever a match crosses such a line it will be in a nice color, otherwise it will be gray.
+      When we count all the matches thrown and divide it by the matches in a nice color, we get PI!
+      <br>
+      This was inspired by an older <a href="https://www.youtube.com/watch?v=sJVivjuMfWA" target="_blank">Numberphile video</a>. 
+    </p>
+    <h5>PI: <span id="pi"></span></h5>
+    <h5>Total matches: <span id="total_matches"></span></h5>
+    <h5>Colored matches: <span id="colored_matches"></span></h5>
+    <h5>Speed: <span id="speed">100</span></h5>
+    <input type="range" id="test5" min="0" max="5000" step="1" value="100" oninput="speedChanged(this.value)" onchange="speedChanged(this.value)" /></h5>
+    
+    <div id="canvasContainer"></div>
+</body>
+</html>
